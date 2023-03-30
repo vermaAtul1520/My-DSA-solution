@@ -7,11 +7,9 @@ public:
             ans.push_back(str);
             return;
         }
-        str.push_back('(');
-        solve(op-1,cl,str);
+        solve(op-1,cl,str+='(');
         str.pop_back();
-        str.push_back(')');
-        solve(op,cl-1,str);
+        solve(op,cl-1,str+=')');
         str.pop_back();
     }
     vector<string> generateParenthesis(int n) {
